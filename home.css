@@ -1,5 +1,5 @@
 .home {
-    background-color: white;
+    background-color: lightgray;
 }
 
 .header {
@@ -90,4 +90,17 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.mySlides{
+  display:none;
+}
+
+.content {
+    width: inherit;
+    margin: 25px auto;
+    padding: 12px;
+    border-radius: 10px;
+    opacity: 0.95;
+    background-color: Gray;
 }
