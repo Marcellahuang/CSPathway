@@ -153,7 +153,18 @@ img {
   height:188px;
   width:212px;
 }
-.demo{
+i {
+  font-size: 70px;
+  font-family: sans-serif;
+}
+
+.hey {
+  background-color: #247593;
+  border: 15px solid #247593;
+  padding: 50px;
+  width: 800px;
+  margin: auto 35%;
+
 
 }
 
