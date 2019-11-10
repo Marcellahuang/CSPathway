@@ -4,81 +4,56 @@
     <link href="home.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <title></title>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
-    <p class = "demo"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
+    <p class = "matrix"></p><p class = "matrix"></p><p class = "matrix"></p>
     <script>
-      setInterval(Timer, 600)
+      setInterval(Timer, 150)
       var b = false;
-
       function Timer()
       {
-        var f = document.getElementsByClassName("demo");
+        var f = document.getElementsByClassName("matrix");
 
         if (!b)
         {
           for (var i = 0; i < f.length; i++)
           {
-            f[i].innerHTML = makeid(Math.round(Math.random() * 2) + 4);
-            f[i].style.color = "darkgray";
+            f[i].innerHTML = binary(Math.round(Math.random() * 2) + 3);
+            f[i].style.color = "white";
             f[i].style.position = "absolute";
-            f[i].style.fontSize = 'x-large';
-            f[i].style.left = Math.random() * 1500 + 'px';
-            f[i].style.top = Math.random() * 600 + 'px';
+            f[i].style.fontSize = 'large';
+
+            if (i >= 14)
+              f[i].style.left = (i + 7) * 50 + 'px';
+            else
+              f[i].style.left = i * 50 + 'px';
+            f[i].style.top = Math.random() * 20 + 'px';
           }
           b = true;
         }
 
         for (var i = 0; i < f.length; i++)
         {
-          if (getPos(f[i]).y >= 40)
+          if (f[i].getBoundingClientRect().top >= 40)
           {
             f[i].style.top = '1px';
-            f[i].innerHTML = makeid(Math.round(Math.random() * 2) + 4);
-            f[i].style.left = Math.random() * 1500 + 'px';
+            f[i].innerHTML = binary(Math.round(Math.random() * 2) + 3);
           }
           else {
-            f[i].style.top = getPos(f[i]).y + 1 + 'px';
+            f[i].style.top = f[i].getBoundingClientRect().top + 1 + 'px';
           }
         }
       }
 
-      function getPos(el)
-      {
-            var rect=el.getBoundingClientRect();
-            return {x:rect.left,y:rect.top};
-      }
-
-      function makeid(length)
+      function binary(length)
       {
           var result           = '';
           var characters       = "01";
           var charactersLength = characters.length;
-
           for ( var i = 0; i < length; i++ ) {
               result += characters.charAt(Math.floor(Math.random() * charactersLength)) + "<br>";
           }
@@ -93,18 +68,20 @@
     </div>
 
 <!--navigation bar-->
-  <div class="navbar">
-  <a href="Home.html">Home</a>
-  <a href="CSCI.html">What is CSCI?</a>
-  <div class="dropdown">
-    <button class="dropbtn">Opportunities
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-        <a href="Careers.html">Career</a>
-      <a href="Internships.html">Internships</a>
+    <div class="navbar">
+    <div class="anchor">
+    <a href="Home.html">Home</a>
+    <a href="CSCI.html">What is CSCI?</a>
+    <div class="dropdown">
+      <button class="dropbtn">Opportunities
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" align ="center">
+          <a href="Careers.html">Career</a>
+        <a href="Internships.html">Internships</a>
     </div>
-  </div>
+      </div>
+    </div>
   <a href="survey.html">Survey</a>
   <a href="About.html">About</a>
 </div>
@@ -115,8 +92,6 @@
 <h1>CSCI</h1>
 
 <p class="p">placeholder</p>
-
-
 
 </div>
 

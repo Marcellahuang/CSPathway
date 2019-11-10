@@ -33,8 +33,8 @@
 			function Timer()
 			{
 				var f = document.getElementsByClassName("matrix");
-				
-				if (!b) 
+
+				if (!b)
 				{
 					for (var i = 0; i < f.length; i++)
 					{
@@ -42,16 +42,16 @@
 						f[i].style.color = "green";
 						f[i].style.position = "absolute";
 						f[i].style.fontSize = 'large';
-						
+
 						if (i >= 10)
 							f[i].style.left = (i + 5) * 50 + 'px';
-						else	
+						else
 							f[i].style.left = i * 50 + 'px';
 						f[i].style.top = Math.random() * 600 + 'px';
 					}
 					b = true;
 				}
-				
+
 				for (var i = 0; i < f.length; i++)
 				{
 					if (f[i].getBoundingClientRect().top >= 700)
@@ -64,11 +64,11 @@
 					}
 				}
 			}
-			
-			function binary(length) 
+
+			function binary(length)
 			{
-   				var result           = '';
-   				var characters       = "01";
+   				var result= '';
+   				var characters = "01";
    				var charactersLength = characters.length;
    				for ( var i = 0; i < length; i++ ) {
      					result += characters.charAt(Math.floor(Math.random() * charactersLength)) + "<br>";
