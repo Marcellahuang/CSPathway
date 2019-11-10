@@ -150,8 +150,8 @@
 }
 
 img {
-  width:150px;
   height:150px;
+  width:378px;
 }
 .demo{
 
@@ -162,4 +162,8 @@ img {
 }
 .box{
   margin-left: 578px;
+}
+
+.edu{
+  font-size:24px;
 }
