@@ -1,0 +1,81 @@
+<html>
+	<header>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<p class = "matrix"></p>
+		<script>
+			setInterval(Timer, 150)
+			var b = false;
+			function Timer()
+			{
+				var f = document.getElementsByClassName("matrix");
+				
+				if (!b) 
+				{
+					for (var i = 0; i < f.length; i++)
+					{
+						f[i].innerHTML = binary(Math.round(Math.random() * 2) + 3);
+						f[i].style.color = "green";
+						f[i].style.position = "absolute";
+						f[i].style.fontSize = 'large';
+						
+						if (i >= 10)
+							f[i].style.left = (i + 5) * 50 + 'px';
+						else	
+							f[i].style.left = i * 50 + 'px';
+						f[i].style.top = Math.random() * 600 + 'px';
+					}
+					b = true;
+				}
+				
+				for (var i = 0; i < f.length; i++)
+				{
+					if (f[i].getBoundingClientRect().top >= 700)
+					{
+						f[i].style.top = '1px';
+						f[i].innerHTML = binary(Math.round(Math.random() * 2) + 3);
+					}
+					else {
+						f[i].style.top = f[i].getBoundingClientRect().top + 1 + 'px';
+					}
+				}
+			}
+			
+			function binary(length) 
+			{
+   				var result           = '';
+   				var characters       = "01";
+   				var charactersLength = characters.length;
+   				for ( var i = 0; i < length; i++ ) {
+     					result += characters.charAt(Math.floor(Math.random() * charactersLength)) + "<br>";
+   				}
+  				return result;
+			}
+		</script>
+	</head>
+	<body bgcolor= "black"> </body>
+</html>
